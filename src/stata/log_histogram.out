@@ -1,0 +1,734 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/home/flav/gossip/gossip_data/log_histogram.out
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}28 May 2022, 15:48:01
+
+{com}. clean
+{err}command {bf}clean{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+{com}. clear
+
+. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+
+{com}. import excel dupsCompleteDataSet, firstrow case(lower)
+{res}{err}file dupsCompleteDataSet not found
+{txt}{search r(601), local:r(601);}
+
+{com}. import excel dupsCompleteDataSet, firstrow case(lower)
+{res}{err}file dupsCompleteDataSet not found
+{txt}{search r(601), local:r(601);}
+
+{com}. import excel dupsCompleteDataSet.csv, firstrow case(lower)
+{res}{err}file dupsCompleteDataSet.csv could not be loaded
+{txt}{search r(603), local:r(603);}
+
+{com}. insheet dupsCompleteDataSet
+{err}using required
+{txt}{search r(100), local:r(100);}
+
+{com}. insheet using dupsCompleteDataSet
+{err}{p 0 4 2}
+file {bf:{err}dupsCompleteDataSet.raw}
+not found
+{p_end}
+{txt}{search r(601), local:r(601);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram le, discrete
+{err}variable {bf}le{sf} not found
+{txt}{search r(111), local:r(111);}
+
+end of do-file
+
+{search r(111), local:r(111);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram le, discrete
+{err}variable {bf}le{sf} not found
+{txt}{search r(111), local:r(111);}
+
+end of do-file
+
+{search r(111), local:r(111);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram dups, discrete
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram dups, discrete freq by(type)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway (histogram dups if type==vanilla, start(1) width(2) color(red%30)) ///        
+>        (histogram dups if type==general, start(1) width(2) color(green%30)), ///   
+>        legend(order(1 "Vanilla" 2 "General" ))
+{err}vanilla not found
+{txt}{search r(111), local:r(111);}
+
+end of do-file
+
+{search r(111), local:r(111);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway (histogram dups if type=="vanilla", start(1) width(2) color(red%30)) ///        
+>        (histogram dups if type=="general", start(1) width(2) color(green%30)), ///   
+>        legend(order(1 "Vanilla" 2 "General" ))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", start(1) width(2) ///
+>                 color(red%30)) ///        
+>         (histogram dups if type=="general", start(1) width(2) ///
+>                 color(green%30)), ///   
+>         (histogram dups if type=="validator", start(1) width(2) ///
+>                 color(yellow%30)), /// 
+>         (histogram dups if type=="unl", start(1) width(2) ///
+>                 color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", start(1) width(2) ///
+>                 color(red%30)) ///        
+>         (histogram dups if type=="general", start(1) width(2) ///
+>                 color(green%30)), ///   
+>         (histogram dups if type=="validator", start(1) width(2) ///
+>                 color(yellow%30)), /// 
+>         (histogram dups if type=="unl", start(1) width(2) ///
+>                 color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL")))
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", start(1) width(2) ///
+>                 color(red%30)) ///        
+>         (histogram dups if type=="general", start(1) width(2) ///
+>                 color(green%30)), ///   
+>         (histogram dups if type=="validator", start(1) width(2) ///
+>                 color(yellow%30)), /// 
+>         (histogram dups if type=="unl", start(1) width(2) ///
+>                 color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL")))
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", start(1) width(2) ///
+>                 color(red%30)), ///        
+>         (histogram dups if type=="general", start(1) width(2) ///
+>                 color(green%30)), ///   
+>         (histogram dups if type=="validator", start(1) width(2) ///
+>                 color(yellow%30)), /// 
+>         (histogram dups if type=="unl", start(1) width(2) ///
+>                 color(blue%30)) /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL")))
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", start(1) width(2) ///
+>                 color(red%30)) ///        
+>         (histogram dups if type=="general", start(1) width(2) ///
+>                 color(green%30)) ///   
+>         (histogram dups if type=="validator", start(1) width(2) ///
+>                 color(yellow%30)) /// 
+>         (histogram dups if type=="unl", start(1) width(2) ///
+>                 color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", start(1) width(2) ///
+>                 color(red%30)) ///        
+>         (histogram dups if type=="general", start(1) width(2) ///
+>                 color(green%30)) ///   
+>         (histogram dups if type=="validator", start(1) width(2) ///
+>                 color(yellow%30)) /// 
+>         (histogram dups if type=="unl", start(1) width(2) ///
+>                 color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL")), ///
+>        discrete, ///
+>        freq
+{err}discrete is not a twoway plot type
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", discrete, freq, ///
+>                 start(1) width(2) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete, freq,///
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", discrete freq, ///
+>                 start(1) width(2) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete freq,///
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", discrete freq ///
+>                 start(1) width(2) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete freq///
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                 start(1) width(2) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                 start(1) width(2)color(green%30)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                 start(1) width(2) color(yellow%30)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                 start(1) width(2) color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. {res}{com}do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. 
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                 freq start(1) width(2) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                 freq start(1) width(2)color(green%30)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                 freq start(1) width(2) color(yellow%30)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                 freq start(1) width(2) color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram dups, discrete freq by(type)
+{res}{txt}
+{com}. 
+. // twoway       (histogram dups if type=="vanilla", discrete ///
+. //              freq start(1) width(2) color(red%30)) ///        
+. //      (histogram dups if type=="general", discrete ///
+. //              freq start(1) width(2)color(green%30)) ///   
+. //      (histogram dups if type=="validator", discrete  ///
+. //              freq start(1) width(2) color(yellow%30)) /// 
+. //      (histogram dups if type=="unl", discrete  ///
+. //              freq start(1) width(2) color(blue%30)), /// 
+. //        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram dups, discrete freq by(type)
+{res}{txt}
+{com}. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                 freq start(0) width(2) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                 freq start(0) width(2)color(green%30)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                 freq start(0) width(2) color(yellow%30)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                 freq start(0) width(2) color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram dups, discrete freq by(type)
+{res}{txt}
+{com}. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                  start(0) width(2) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                  start(0) width(2) color(green%30)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                  start(0) width(2) color(yellow%30)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                  start(0) width(2) color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram dups, discrete freq by(type)
+{res}{txt}
+{com}. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                  start(0) width(3) color(red%30)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                  start(0) width(3) color(green%30)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                  start(0) width(3) color(yellow%30)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                  start(0) width(3) color(blue%30)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. {res}{com}graph save "Graph" "/home/flav/gossip/gossip_data/Graph.gph"
+{res}{txt}file {bf:/home/flav/gossip/gossip_data/Graph.gph} saved
+{com}do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. twoway histogram dups, discrete freq by(type)
+{res}{txt}
+{com}. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                  start(0) width(5) color(red%30)  lcolor(red)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                  start(0) width(5) color(green%30) lcolor(green)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                  start(0) width(5) color(yellow%30) lcolor(yellow)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                  start(0) width(5) color(blue%30) lcolor(blue)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                  start(0) width(5) color(red%30)  lcolor(red%100)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                  start(0) width(5) color(green%30) lcolor(green%100)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                  start(0) width(5) color(yellow%30) lcolor(yellow%100)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                  start(0) width(5) color(blue%30) lcolor(blue%100)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/tmp/SD17240.000000"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                  freq by(type) start(0) width(5) color(red%30)  lcolor(red%100)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                  freq by(type) start(0) width(5) color(green%30) lcolor(green%100)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                  freq by(type) start(0) width(5) color(yellow%30) lcolor(yellow%100)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                  freq by(type) start(0) width(5) color(blue%30) lcolor(blue%100)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/home/flav/gossip/gossip_data/Histogram.do"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                  freq start(0) width(5) color(red%30)  lcolor(red%100)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                  freq start(0) width(5) color(green%30) lcolor(green%100)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                  freq start(0) width(5) color(yellow%30) lcolor(yellow%100)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                  freq start(0) width(5) color(blue%30) lcolor(blue%100)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/home/flav/gossip/gossip_data/Histogram.do"
+{txt}
+{com}. clear
+{txt}
+{com}. cd /home/flav/gossip/gossip_data/
+{res}/home/flav/gossip/gossip_data
+{txt}
+{com}. 
+. insheet using dupsCompleteDataSet.csv, comma clear
+{txt}(3 vars, 26,573 obs)
+
+{com}. 
+. // twoway histogram dups, discrete freq by(type)
+. //
+. twoway  (histogram dups if type=="vanilla", discrete ///
+>                  freq start(1) width(5) color(red%30)  lcolor(red%100)) ///        
+>         (histogram dups if type=="general", discrete ///
+>                  freq start(1) width(5) color(green%30) lcolor(green%100)) ///   
+>         (histogram dups if type=="validator", discrete  ///
+>                  freq start(1) width(5) color(yellow%30) lcolor(yellow%100)) /// 
+>         (histogram dups if type=="unl", discrete  ///
+>                  freq start(1) width(5) color(blue%30) lcolor(blue%100)), /// 
+>        legend(order(1 "Vanilla" 2 "General" 3 "Validator" 4 "UNL"))
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/home/flav/gossip/gossip_data/log_histogram.out
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}28 May 2022, 16:34:46
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
